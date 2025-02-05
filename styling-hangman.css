@@ -28,6 +28,17 @@
     overflow: hidden;
     transition: 0.3s;
 }
+input{ font-size: normal ; padding:.5em; }
+
+.inputstyle{
+    font-size: 1.2vw;
+    position: absolute; 
+    white-space: normal;
+    text-align: center;
+    font-family: 'Gill Sans';
+    top: 400%; 
+    left: 34%; 
+}
 
 /* Positioning the buttons */
 .option1 { top: 150%; left: 22%; }

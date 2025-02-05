@@ -131,10 +131,63 @@ let currentindex = 0;
 let current_correct; 
 let current_symbol = document.getElementById("main_symbol");
 let current_arabic = document.getElementById("main_Arabic");
+let to_index = 98;
+let from_index = 0;
+
+
 
 fill_options()
+var input = document.querySelector('input'); // get the input element
+input.addEventListener('input', resizeInput); // bind the "resizeInput" callback on "input" event
+resizeInput.call(input); // immediately call the function
+
+let from_bar = document.getElementById('from')
+let to_bar = document.getElementById('to')
+from_bar.addEventListener('input', function(event) {
+    var currentValue = event.target.value;
+    if ((isNaN(currentValue)) || (currentValue < 1) || (currentValue > 99)){
+        alert("Please enter numbers as in order of the names!")
+        from_bar.value = "";
+    }
+  });
+
+  to_bar.addEventListener('input', function(event) {
+    var currentvalue = event.target.value;
+    if ((isNaN(currentValue)) || (currentValue < 1) || (currentValue > 99)){
+        alert("Please enter numbers as in order of the names!")
+        to_bar.value = "";
+    }
+  });
+
+  from_bar.addEventListener("keyup", function(event) {
+    if ((event.keyCode === 13)) {
+        currentindex = from_bar.value - 1; 
+        from_index = currentindex
+        fill_options()
+    }
+  });
+
+  to_bar.addEventListener("keyup", function(event) {
+    if ((event.keyCode === 13)) {
+        to_index = to_bar.value - 1
+    }
+  });
+
+function resizeInput() {
+  this.style.width = this.value.length + "ch";
+}
 
 function Check_answer(choice) {
+    opt1.disabled = true;
+    opt2.disabled = true;
+    opt3.disabled = true;
+    opt4.disabled = true;
+    opt1.style.transparency = "";
+    opt2.style.transparency = "";
+    opt3.style.transparency = "";
+    opt4.style.transparency = "";
+
+
     let choice_button = document.getElementById(choice);
     let always_correct = document.getElementById(current_correct)
     if(choice_button.textContent == always_correct.textContent){
@@ -150,10 +203,18 @@ function Check_answer(choice) {
 
             setTimeout(() => {
                 currentindex++;
+                if (currentindex > to_index){
+                    currentindex = from_index;
+                    fill_options() 
+                }
                 always_correct.style.backgroundColor = "";
                 always_correct.style.color = "";
                 choice_button.style.backgroundColor = ""; 
                 choice_button.style.color = "";
+                opt1.disabled = false;
+                opt2.disabled = false;
+                opt3.disabled = false;
+                opt4.disabled = false;
                 fill_options()
               }, 900);
 
@@ -163,10 +224,18 @@ function Check_answer(choice) {
     }
     setTimeout(() => {
         currentindex++;
+        if (currentindex > to_index){
+            currentindex = from_index;
+            fill_options() 
+        }
         always_correct.style.backgroundColor = "";
         always_correct.style.color = "";
         choice_button.style.backgroundColor = ""; 
         choice_button.style.color = "";
+        opt1.disabled = false;
+        opt2.disabled = false;
+        opt3.disabled = false;
+        opt4.disabled = false;
         fill_options()
       }, 900);
     

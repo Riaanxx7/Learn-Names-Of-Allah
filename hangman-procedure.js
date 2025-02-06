@@ -133,6 +133,8 @@ let current_symbol = document.getElementById("main_symbol");
 let current_arabic = document.getElementById("main_Arabic");
 let to_index = 98;
 let from_index = 0;
+let from_bar_val;
+let to_bar_val;
 
 
 
@@ -141,13 +143,14 @@ var input = document.querySelector('input'); // get the input element
 input.addEventListener('input', resizeInput); // bind the "resizeInput" callback on "input" event
 resizeInput.call(input); // immediately call the function
 
-let from_bar = document.getElementById('from')
-let to_bar = document.getElementById('to')
+from_bar = document.getElementById('from')
+to_bar = document.getElementById('to')
 from_bar.addEventListener('input', function(event) {
     var currentValue = event.target.value;
     if ((isNaN(currentValue)) || (currentValue < 1) || (currentValue > 99)){
         from_bar.value = "";
     }else{
+        from_bar_val =  Number(from_bar.value);
         currentindex = from_bar.value - 1; 
         from_index = currentindex
         fill_options()
@@ -159,11 +162,28 @@ from_bar.addEventListener('input', function(event) {
     if ((isNaN(currentValue)) || (currentValue < 1) || (currentValue > 99)){
         to_bar.value = "";
     }else{
-        to_index = to_bar.value - 1
+        to_bar_val = Number(to_bar.value);
+        if(to_bar_val < from_bar_val){
+            to_bar.style.outline = "2px solid red";
+            opt1.disabled = true;
+            opt2.disabled = true;
+            opt3.disabled = true;
+            opt4.disabled = true;
+        }else{
+            to_index = to_bar.value - 1;
+            to_bar.style.outline = "none";
+            opt1.disabled = false;
+            opt2.disabled = false;
+            opt3.disabled = false;
+            opt4.disabled = false;
+        }
     }
   });
 
 function switch_names(direction){
+    if (to_bar_val < from_bar_val){
+        return;
+    }
     if (direction == "right"){
         currentindex++; 
         if (currentindex > 98){
@@ -180,7 +200,9 @@ function switch_names(direction){
     }
 }
 addEventListener("keyup", function(event) {
-    if ((event.keyCode === 39)) {
+    if (to_bar_val < from_bar_val){
+        return;
+    }else if ((event.keyCode === 39)) {
         currentindex++; 
         if (currentindex > 98){
             currentindex = 98;

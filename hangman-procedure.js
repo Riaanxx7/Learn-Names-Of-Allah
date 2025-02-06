@@ -11,16 +11,16 @@ const list_symbols = [
     "ٱلضَّٰرَ", "ٱلنَّافِعُ", "ٱلْنُورُ", "ٱلْهَادِي", "ٱلْبَدِيعُ", "ٱلْبَاقِي", "ٱلْوَارِثُ", "ٱلرَّشِيدُ", "ٱلصَّبُورُ"
 ];
 const list_arabic = [
-    "Ar-Rahmaan", "Ar-Raheem", "Al-Malik", "Al-Quddus", "As-Salaam", "Al-Mu’min", "Al-Muhaymin", "Al-Azeez", "Al-Jabbaar", "Al-Mutakabbir",
-    "Al-Khaaliq", "Al-Baari’", "Al-Musawwir", "Al-Ghaffaar", "Al-Qahhaar", "Al-Wahhaab", "Ar-Razzaaq", "Al-Fattah", "Al-‘Aleem", "Al-Qaabid",
-    "Al-Baasit", "Al-Khaafid", "Ar-Raafi’", "Al-Mu’izz", "Al-Mudhill", "As-Samee’", "Al-Baseer", "Al-Hakam", "Al-‘Adl", "Al-Lateef",
-    "Al-Khabeer", "Al-Haleem", "Al-‘Azeem", "Al-Ghafoor", "Ash-Shakoor", "Al-‘Aliyy", "Al-Kabeer", "Al-Hafeez", "Al-Muqeet", "Al-Haseeb",
-    "Al-Jaleel", "Al-Kareem", "Ar-Raqeeb", "Al-Mujeeb", "Al-Waasi’", "Al-Hakeem", "Al-Wadud", "Al-Majeed", "Al-Ba’ith", "Ash-Shaheed",
-    "Al-Haqq", "Al-Wakeel", "Al-Qawiyy", "Al-Mateen", "Al-Waliyy", "Al-Hameed", "Al-Muhsi", "Al-Mubdi’", "Al-Mu’eed", "Al-Muhyi",
-    "Al-Mumeet", "Al-Hayy", "Al-Qayyoom", "Al-Waajid", "Al-Maajid", "Al-Waahid", "Al-Ahad", "As-Samad", "Al-Qaadir", "Al-Muqtadir",
-    "Al-Muqaddim", "Al-Mu’akhkhir", "Al-Awwal", "Al-Aakhir", "Az-Zaahir", "Al-Baatin", "Al-Waali", "Al-Muta’aali", "Al-Barr", "At-Tawwaab",
-    "Al-Muntaqim", "Al-‘Afuww", "Ar-Ra’oof", "Maalik-ul-Mulk", "Dhul-Jalaali wal-Ikraam", "Al-Muqsit", "Al-Jaami’", "Al-Ghaniyy", "Al-Mughni", "Al-Maani’",
-    "Ad-Daarr", "An-Naafi’", "An-Noor", "Al-Haadi", "Al-Badee’", "Al-Baaqi", "Al-Waarith", "Ar-Rasheed", "As-Saboor"
+    "1. Ar-Rahmaan", "2. Ar-Raheem", "3. Al-Malik", "4. Al-Quddus", "5. As-Salaam", "6. Al-Mu’min", "7. Al-Muhaymin", "8. Al-Azeez", "9. Al-Jabbaar", "10. Al-Mutakabbir",
+    "11. Al-Khaaliq", "12. Al-Baari’", "13. Al-Musawwir", "14. Al-Ghaffaar", "15. Al-Qahhaar", "16. Al-Wahhaab", "17. Ar-Razzaaq", "18. Al-Fattah", "19. Al-‘Aleem", "20. Al-Qaabid",
+    "21. Al-Baasit", "22. Al-Khaafid", "23. Ar-Raafi’", "24. Al-Mu’izz", "25. Al-Mudhill", "26. As-Samee’", "27. Al-Baseer", "28. Al-Hakam", "29. Al-‘Adl", "30. Al-Lateef",
+    "31. Al-Khabeer", "32. Al-Haleem", "33. Al-‘Azeem", "34. Al-Ghafoor", "35. Ash-Shakoor", "36. Al-‘Aliyy", "37. Al-Kabeer", "38. Al-Hafeez", "39. Al-Muqeet", "40. Al-Haseeb",
+    "41. Al-Jaleel", "42. Al-Kareem", "43. Ar-Raqeeb", "44. Al-Mujeeb", "45. Al-Waasi’", "46. Al-Hakeem", "47. Al-Wadud", "48. Al-Majeed", "49. Al-Ba’ith", "50. Ash-Shaheed",
+    "51. Al-Haqq", "52. Al-Wakeel", "53. Al-Qawiyy", "54. Al-Mateen", "55. Al-Waliyy", "56. Al-Hameed", "57. Al-Muhsi", "58. Al-Mubdi’", "59. Al-Mu’eed", "60. Al-Muhyi",
+    "61. Al-Mumeet", "62. Al-Hayy", "63. Al-Qayyoom", "64. Al-Waajid", "65. Al-Maajid", "66. Al-Waahid", "67. Al-Ahad", "68. As-Samad", "69. Al-Qaadir", "70. Al-Muqtadir",
+    "71. Al-Muqaddim", "72. Al-Mu’akhkhir", "73. Al-Awwal", "74. Al-Aakhir", "75. Az-Zaahir", "76. Al-Baatin", "77. Al-Waali", "78. Al-Muta’aali", "79. Al-Barr", "80. At-Tawwaab",
+    "81. Al-Muntaqim", "82. Al-‘Afuww", "83. Ar-Ra’oof", "84. Maalik-ul-Mulk", "85. Dhul-Jalaali wal-Ikraam", "86. Al-Muqsit", "87. Al-Jaami’", "88. Al-Ghaniyy", "89. Al-Mughni", "90. Al-Maani’",
+    "91. Ad-Daarr", "92. An-Naafi’", "93. An-Noor", "94. Al-Haadi", "95. Al-Badee’", "96. Al-Baaqi", "97. Al-Waarith", "98. Ar-Rasheed", "99. As-Saboor"
 ];
 const list_English = [
     "The Most or Entirely Merciful",

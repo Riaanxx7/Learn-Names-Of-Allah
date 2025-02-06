@@ -163,6 +163,39 @@ from_bar.addEventListener('input', function(event) {
     }
   });
 
+function switch_names(direction){
+    if (direction == "right"){
+        currentindex++; 
+        if (currentindex > 98){
+            currentindex = 98;
+            return;}
+        fill_options()
+    }else{
+        currentindex--;
+        if (currentindex < 0){
+            currentindex = 0;
+            return;
+        }
+        fill_options()
+    }
+}
+addEventListener("keyup", function(event) {
+    if ((event.keyCode === 39)) {
+        currentindex++; 
+        if (currentindex > 98){
+            currentindex = 98;
+            return;}
+        fill_options()
+    }else if(event.keyCode === 37){
+        currentindex--;
+        if (currentindex < 0){
+            currentindex = 0;
+            return;
+        }
+        fill_options()
+    }
+  });
+
 function resizeInput() {
   this.style.width = this.value.length + "ch";
 }

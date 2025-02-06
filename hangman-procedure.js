@@ -147,6 +147,10 @@ from_bar.addEventListener('input', function(event) {
     var currentValue = event.target.value;
     if ((isNaN(currentValue)) || (currentValue < 1) || (currentValue > 99)){
         from_bar.value = "";
+    }else{
+        currentindex = from_bar.value - 1; 
+        from_index = currentindex
+        fill_options()
     }
   });
 
@@ -154,20 +158,7 @@ from_bar.addEventListener('input', function(event) {
     var currentValue = event.target.value;
     if ((isNaN(currentValue)) || (currentValue < 1) || (currentValue > 99)){
         to_bar.value = "";
-    }
-  });
-
-  from_bar.addEventListener("keyup", function(event) {
-    var currentValue = event.target.value;
-    if ((event.keyCode === 13) && (currentValue != "")) {
-        currentindex = from_bar.value - 1; 
-        from_index = currentindex
-        fill_options()
-    }
-  });
-
-  to_bar.addEventListener("keyup", function(event) {
-    if ((event.keyCode === 13)) {
+    }else{
         to_index = to_bar.value - 1
     }
   });

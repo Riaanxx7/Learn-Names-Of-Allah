@@ -151,9 +151,22 @@ from_bar.addEventListener('input', function(event) {
         from_bar.value = "";
     }else{
         from_bar_val =  Number(from_bar.value);
-        currentindex = from_bar.value - 1; 
-        from_index = currentindex
-        fill_options()
+        if(to_bar_val < from_bar_val){
+            to_bar.style.outline = "2px solid red";
+            opt1.disabled = true;
+            opt2.disabled = true;
+            opt3.disabled = true;
+            opt4.disabled = true;
+        }else{
+            currentindex = from_bar.value - 1; 
+            from_index = currentindex;
+            to_bar.style.outline = "none";
+            opt1.disabled = false;
+            opt2.disabled = false;
+            opt3.disabled = false;
+            opt4.disabled = false;
+            fill_options()
+        }
     }
   });
 

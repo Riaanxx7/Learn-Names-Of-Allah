@@ -6,6 +6,7 @@
             <meta content="utf-8" http-equiv="encoding">
     
             <link rel="stylesheet" type="text/css" href="styling-hangman.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         </head>    
 <body>
     <div class="centered_symbols">
@@ -15,6 +16,8 @@
         <div id="main_Arabic"class="centered_Arabic">
             Ar-Rahmaan
         </div>
+        <audio id="audio" src="name_audios/Ar-Rahmaan.mp3" autostart="false"></audio>
+        <i class="fas fa-volume-up posaudio" onclick="playAudio()"></i>
         <button onclick="Check_answer('opt1')" id="opt1"class="option1"></button>
         <button onclick="Check_answer('opt2')"id="opt2" class="option2"></button>
         <button onclick="Check_answer('opt3')"id="opt3"class="option3"></button>

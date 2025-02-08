@@ -137,6 +137,13 @@ let from_bar_val;
 let to_bar_val;
 
 
+function playAudio() {
+    let currentName = document.getElementById("main_Arabic").textContent.trim();
+    currentName = currentName.replace(/^\d+\.\s*/, ''); // syntax van chatGPT om de nummering te vermijden
+    let audioPath = `name_audios/${currentName}.mp3`;
+    let audio = new Audio(audioPath);
+    audio.play()
+}
 
 fill_options()
 var input = document.querySelector('input'); // get the input element

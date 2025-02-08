@@ -141,7 +141,7 @@ let to_bar_val;
 
 function playAudio() {
     let currentName = document.getElementById("main_Arabic").textContent.trim();
-    currentName = currentName.replace(/^\d+\.\s*/, ''); // syntax van chatGPT om de nummering te vermijden
+    currentName = currentName.replace(/^\d+\.\s*/, ''); // deze regel code van chatGPT (voor nummering bij de namen weg te halen)
     let audioPath = `name_audios/${currentName}.mp3`;
 
     if (currentAudio) {
@@ -153,10 +153,16 @@ function playAudio() {
     horn.onclick = null;
 
     currentAudio.play()
+    horn.style.color = "Gainsboro";
+    horn.style.fontSize = "51px";
 
     currentAudio.onended = () => {
         horn.onclick = playAudio;
         currentAudio = null;
+        horn.style.color = "";
+        horn.style.fontSize = "";
+
+
     };  
 horn.onclick = playAudio;
 }

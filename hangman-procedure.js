@@ -157,12 +157,10 @@ function playAudio() {
     horn.style.fontSize = "51px";
 
     currentAudio.onended = () => {
-        horn.onclick = playAudio;
-        currentAudio = null;
         horn.style.color = "";
         horn.style.fontSize = "";
-
-
+        horn.onclick = playAudio;
+        currentAudio = null;
     };  
 horn.onclick = playAudio;
 }

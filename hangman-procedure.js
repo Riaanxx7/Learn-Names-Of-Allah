@@ -131,6 +131,8 @@ let currentindex = 0;
 let current_correct; 
 let current_symbol = document.getElementById("main_symbol");
 let current_arabic = document.getElementById("main_Arabic");
+let horn = document.getElementById("horn");
+let currentAudio = null;
 let to_index = 98;
 let from_index = 0;
 let from_bar_val;
@@ -141,8 +143,22 @@ function playAudio() {
     let currentName = document.getElementById("main_Arabic").textContent.trim();
     currentName = currentName.replace(/^\d+\.\s*/, ''); // syntax van chatGPT om de nummering te vermijden
     let audioPath = `name_audios/${currentName}.mp3`;
-    let audio = new Audio(audioPath);
-    audio.play()
+
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0; 
+    }
+    currentAudio = new Audio(audioPath);
+    
+    horn.onclick = null;
+
+    currentAudio.play()
+
+    currentAudio.onended = () => {
+        horn.onclick = playAudio;
+        currentAudio = null;
+    };  
+horn.onclick = playAudio;
 }
 
 fill_options()
@@ -315,6 +331,7 @@ function fill_options() {
     let j = 0;
     current_symbol.textContent = list_symbols[i];
     current_arabic.textContent = list_arabic[i];
+    playAudio()
     let correct_translation = list_English[i]
     let correct_pos = Math.floor(Math.random() * 4);
     if (correct_pos == 0){

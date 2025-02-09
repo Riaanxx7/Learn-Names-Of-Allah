@@ -169,7 +169,7 @@ horn.onclick = playAudio;
 
 fill_options()
 var input = document.querySelector('input'); 
-input.addEventListener('input', resizeInput); // inputbar die automatisch resized 
+input.addEventListener('input', resizeInput); // inputbar die automatisch resized  
 resizeInput.call(input); 
 from_bar.addEventListener('blur', () => AllowShortcutOpt = true); // blur => JS functie dat checkt of er focus verloren is (hier in de inputfield)
 from_bar.addEventListener('focus', () => AllowShortcutOpt = false); // focus => JS functie dat focust op kliks/wijzigingen in de input field van from

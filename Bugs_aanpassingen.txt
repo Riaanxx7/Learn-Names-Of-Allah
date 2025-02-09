@@ -1,1 +1,1 @@
-1. Bij het wijzigen van het nummer, klikt het programma automatisch al op de eerste knop
+1. Bij het wijzigen van het nummer, klikt het programma automatisch al op de eerste knop (Solved => Riaan)

@@ -151,7 +151,6 @@ function playAudio() {
     currentAudio = new Audio(audioPath);
     
     horn.onclick = null;
-
     currentAudio.play()
     horn.style.color = "Gainsboro";
     horn.style.fontSize = "51px";

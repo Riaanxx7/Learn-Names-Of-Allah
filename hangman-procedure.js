@@ -127,6 +127,8 @@ const opt1 = document.getElementById("opt1");
 const opt2 = document.getElementById("opt2");
 const opt3 = document.getElementById("opt3");
 const opt4 = document.getElementById("opt4");
+const LeftArrow = document.getElementById("LeftArrow");
+const RightArrow = document.getElementById("RightArrow");
 let currentindex = 0; 
 let current_correct; 
 let current_symbol = document.getElementById("main_symbol");
@@ -141,7 +143,17 @@ let from_bar_val;
 let to_bar_val;
 let AllowShortcutOpt; 
 AllowShortcutOpt = true; // sentinel waarde om de optieshortcut te beheren 
-
+hideArrows()
+function hideArrows(){
+    if (currentindex == 0){ // bij begin en eind één pijlknop verbergen 
+        LeftArrow.style.display = "none";
+    }else if (currentindex == 98){
+        RightArrow.style.display = "none";
+    }else{
+        LeftArrow.style.display = "block"; 
+        RightArrow.style.display = "block";
+    }
+}
 function playAudio() {
     let currentName = document.getElementById("main_Arabic").textContent.trim();
     currentName = currentName.replace(/^\d+\.\s*/, ''); // deze regel code van chatGPT (voor nummering bij de namen weg te halen)
@@ -187,6 +199,7 @@ from_bar.addEventListener('input', function(event) {
             opt4.disabled = true;
         }else{
             currentindex = from_bar.value - 1; 
+            hideArrows()
             from_index = currentindex;
             to_bar.style.outline = "none";
             opt1.disabled = false;
@@ -240,6 +253,7 @@ function switch_names(direction){
         }
         fill_options()
     }
+    hideArrows()
 }
 
 const buttons = document.querySelectorAll('button'); // fancy mousehover effect voor elke optie
@@ -256,18 +270,9 @@ addEventListener("keyup", function(event) { // De keyinput handeler (o.a. voor s
     if (to_bar_val < from_bar_val){
         return;
     }else if ((event.keyCode === 39)) {
-        currentindex++; 
-        if (currentindex > 98){
-            currentindex = 98;
-            return;}
-        fill_options()
+        switch_names("right")
     }else if(event.keyCode === 37){
-        currentindex--;
-        if (currentindex < 0){
-            currentindex = 0;
-            return;
-        }
-        fill_options()
+        switch_names("left")
     }else if(AllowShortcutOpt == false){
         return; 
     }else if(event.keyCode === 49){ // 49 = "1" => shortcut voor optie 1 te kiezen

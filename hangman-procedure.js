@@ -135,9 +135,12 @@ let horn = document.getElementById("horn");
 let currentAudio = null;
 let to_index = 98;
 let from_index = 0;
+let from_bar = document.getElementById('from');
+let to_bar = document.getElementById('to');
 let from_bar_val;
 let to_bar_val;
-
+let AllowShortcutOpt; 
+AllowShortcutOpt = true; // sentinel waarde om de optieshortcut te beheren 
 
 function playAudio() {
     let currentName = document.getElementById("main_Arabic").textContent.trim();
@@ -165,17 +168,16 @@ horn.onclick = playAudio;
 }
 
 fill_options()
-var input = document.querySelector('input'); // get the input element
-input.addEventListener('input', resizeInput); // bind the "resizeInput" callback on "input" event
-resizeInput.call(input); // immediately call the function
-
-from_bar = document.getElementById('from')
-to_bar = document.getElementById('to')
+var input = document.querySelector('input'); 
+input.addEventListener('input', resizeInput); // inputbar die automatisch resized 
+resizeInput.call(input); 
+from_bar.addEventListener('blur', () => AllowShortcutOpt = true); // blur => JS functie dat checkt of er focus verloren is (hier in de inputfield)
+from_bar.addEventListener('focus', () => AllowShortcutOpt = false); // focus => JS functie dat focust op kliks/wijzigingen in de input field van from
 from_bar.addEventListener('input', function(event) {
     var currentValue = event.target.value;
     if ((isNaN(currentValue)) || (currentValue < 1) || (currentValue > 99)){
         from_bar.value = "";
-    }else{
+    }else{ 
         from_bar_val =  Number(from_bar.value);
         if(to_bar_val < from_bar_val){
             to_bar.style.outline = "2px solid red";
@@ -195,7 +197,8 @@ from_bar.addEventListener('input', function(event) {
         }
     }
   });
-
+  to_bar.addEventListener('blur', () => AllowShortcutOpt = true);
+  to_bar.addEventListener('focus', () => AllowShortcutOpt = false);
   to_bar.addEventListener('input', function(event) {
     var currentValue = event.target.value;
     if ((isNaN(currentValue)) || (currentValue < 1) || (currentValue > 99)){
@@ -265,7 +268,8 @@ addEventListener("keyup", function(event) { // De keyinput handeler (o.a. voor s
             return;
         }
         fill_options()
-    
+    }else if(AllowShortcutOpt == false){
+        return; 
     }else if(event.keyCode === 49){ // 49 = "1" => shortcut voor optie 1 te kiezen
         for (let i = 1; i < 4; i++) { 
             let check_opt = this.document.getElementById(`opt${i}`); // een flush om ervoor te zorgen dat je niet meerdere keren een antwoord kan kiezen -- performantie-doenbaar => slechts één forloop bij een antwoord

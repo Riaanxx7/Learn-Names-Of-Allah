@@ -238,7 +238,18 @@ function switch_names(direction){
         fill_options()
     }
 }
-addEventListener("keyup", function(event) {
+
+const buttons = document.querySelectorAll('button'); // fancy mousehover effect voor elke optie
+buttons.forEach(button => {
+    button.addEventListener('mouseover', () => {
+    button.style.borderColor = 'lightblue';
+    });
+
+    button.addEventListener('mouseout', () => {
+    button.style.borderColor = '';
+    });
+});
+addEventListener("keyup", function(event) { // De keyinput handeler (o.a. voor shortcuts)
     if (to_bar_val < from_bar_val){
         return;
     }else if ((event.keyCode === 39)) {
@@ -254,6 +265,42 @@ addEventListener("keyup", function(event) {
             return;
         }
         fill_options()
+    
+    }else if(event.keyCode === 49){ // 49 = "1" => shortcut voor optie 1 te kiezen
+        for (let i = 1; i < 4; i++) { 
+            let check_opt = this.document.getElementById(`opt${i}`); // een flush om ervoor te zorgen dat je niet meerdere keren een antwoord kan kiezen -- performantie-doenbaar => slechts één forloop bij een antwoord
+            if (check_opt.style.backgroundColor != ""){
+                return; 
+                }
+            }
+        Check_answer('opt1')
+
+    }else if(event.keyCode === 50){ // "2" => optie 3 (onder optie 1)
+        for (let i = 1; i < 4; i++) { 
+            let check_opt = this.document.getElementById(`opt${i}`);
+            if (check_opt.style.backgroundColor != ""){
+                return; 
+                }
+            }
+        Check_answer('opt3')
+
+    }else if(event.keyCode === 51){ // "3" => optie 2 (naast optie 1)
+        for (let i = 1; i < 4; i++) { 
+            let check_opt = this.document.getElementById(`opt${i}`);
+            if (check_opt.style.backgroundColor != ""){
+                return; 
+                }
+            }
+        Check_answer('opt2')
+
+    }else if(event.keyCode === 52){ // "4" => optie 4 (onder optie 2)
+        for (let i = 1; i < 4; i++) { 
+            let check_opt = this.document.getElementById(`opt${i}`);
+            if (check_opt.style.backgroundColor != ""){
+                return; 
+                }
+            }
+        Check_answer('opt4')
     }
   });
 
@@ -266,12 +313,6 @@ function Check_answer(choice) {
     opt2.disabled = true;
     opt3.disabled = true;
     opt4.disabled = true;
-    opt1.style.transparency = "";
-    opt2.style.transparency = "";
-    opt3.style.transparency = "";
-    opt4.style.transparency = "";
-
-
     let choice_button = document.getElementById(choice);
     let always_correct = document.getElementById(current_correct)
     if(choice_button.textContent == always_correct.textContent){

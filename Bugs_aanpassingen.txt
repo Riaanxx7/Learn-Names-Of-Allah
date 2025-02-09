@@ -1,2 +1,1 @@
-1. bij het maken van een vraag (naam) dan gaat de onderste cijfer niet mee.
-    Bv. Je gaat naar naam 10 juist/fout -> vervolgens automatisch naar 11, maar de onderste cijferkeuze komt niet mee.  (solved => Riaan)
+1. Bij het wijzigen van het nummer, klikt het programma automatisch al op de eerste knop

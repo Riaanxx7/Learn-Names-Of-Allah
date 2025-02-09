@@ -245,11 +245,11 @@ function switch_names(direction){
 const buttons = document.querySelectorAll('button'); // fancy mousehover effect voor elke optie
 buttons.forEach(button => {
     button.addEventListener('mouseover', () => {
-    button.style.borderColor = 'lightblue';
+    button.style.boxShadow = "rgba(3, 102, 214, 0.3) 0px 0px 0px 3px";
     });
 
     button.addEventListener('mouseout', () => {
-    button.style.borderColor = '';
+    button.style.boxShadow = "";
     });
 });
 addEventListener("keyup", function(event) { // De keyinput handeler (o.a. voor shortcuts)

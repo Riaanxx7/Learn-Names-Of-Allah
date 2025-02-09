@@ -339,6 +339,7 @@ function Check_answer(choice) {
                 currentindex++;
                 if (currentindex > to_index){
                     currentindex = from_index;
+                    hideArrows()
                     fill_options() 
                 }
                 always_correct.style.backgroundColor = "";
@@ -349,6 +350,7 @@ function Check_answer(choice) {
                 opt2.disabled = false;
                 opt3.disabled = false;
                 opt4.disabled = false;
+                hideArrows()
                 fill_options()
               }, 900);
 
@@ -360,6 +362,7 @@ function Check_answer(choice) {
         currentindex++;
         if (currentindex > to_index){
             currentindex = from_index;
+            hideArrows()
             fill_options() 
         }
         always_correct.style.backgroundColor = "";
@@ -370,6 +373,7 @@ function Check_answer(choice) {
         opt2.disabled = false;
         opt3.disabled = false;
         opt4.disabled = false;
+        hideArrows()
         fill_options()
       }, 900);
     

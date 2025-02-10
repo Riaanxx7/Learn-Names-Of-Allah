@@ -4,31 +4,23 @@
         <!-- Laat de twee volgende lijnen staan -->
             <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
             <meta content="utf-8" http-equiv="encoding">
-    
+
             <link rel="stylesheet" type="text/css" href="styling-hangman.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-            <br>
-            </br>
-        </head>    
+        </head>
 <body>
     <div class="centered_symbols">
-        <i onclick="switch_names('right')" class="arrow right"></i></p>
-        <i onclick="switch_names('left')"class="arrow left"></i></p>
+        <i onclick="switch_names('right')"id="RightArrow" class="arrow right"></i></p>
+        <i onclick="switch_names('left')"id="LeftArrow" class="arrow left"></i></p>
         <header id="main_symbol">ٱلرَّحْمَٰنُ</header>
         <div id="main_Arabic"class="centered_Arabic">
             Ar-Rahmaan
         </div>
         <i id="horn" class="fas fa-volume-up posaudio" onclick="playAudio()"></i>
-    </section>
-
-    <section class="arabic_name-arabick_button">
         <button onclick="Check_answer('opt1')" id="opt1"class="option1"></button>
         <button onclick="Check_answer('opt2')"id="opt2" class="option2"></button>
         <button onclick="Check_answer('opt3')"id="opt3"class="option3"></button>
         <button onclick="Check_answer('opt4')"id="opt4"class="option4"></button>
-    </section>
-
-    <section class="arabic_name-arabick_button">
         <form action="/url" method="GET" class="inputstyle">
             <label for="from"> From what number</label>
                 <input type="text" id="from" name="" placeholder="1" minlength="1" maxlength="2" required>
@@ -36,8 +28,7 @@
                 <input type="text" id="to" name="" minlength="1" placeholder="99" maxlength="2" required>
         </form>
     </div>
-    </section>
-   
+
 <script src="hangman-procedure.js"></script>
 </body>
 </html>

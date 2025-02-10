@@ -127,6 +127,8 @@ const opt1 = document.getElementById("opt1");
 const opt2 = document.getElementById("opt2");
 const opt3 = document.getElementById("opt3");
 const opt4 = document.getElementById("opt4");
+const LeftArrow = document.getElementById("LeftArrow");
+const RightArrow = document.getElementById("RightArrow");
 let currentindex = 0; 
 let current_correct; 
 let current_symbol = document.getElementById("main_symbol");
@@ -135,10 +137,23 @@ let horn = document.getElementById("horn");
 let currentAudio = null;
 let to_index = 98;
 let from_index = 0;
+let from_bar = document.getElementById('from');
+let to_bar = document.getElementById('to');
 let from_bar_val;
 let to_bar_val;
-
-
+let AllowShortcutOpt; 
+AllowShortcutOpt = true; // sentinel waarde om de optieshortcut te beheren 
+hideArrows()
+function hideArrows(){
+    if (currentindex == 0){ // bij begin en eind één pijlknop verbergen 
+        LeftArrow.style.display = "none";
+    }else if (currentindex == 98){
+        RightArrow.style.display = "none";
+    }else{
+        LeftArrow.style.display = "block"; 
+        RightArrow.style.display = "block";
+    }
+}
 function playAudio() {
     let currentName = document.getElementById("main_Arabic").textContent.trim();
     currentName = currentName.replace(/^\d+\.\s*/, ''); // deze regel code van chatGPT (voor nummering bij de namen weg te halen)
@@ -165,17 +180,16 @@ horn.onclick = playAudio;
 }
 
 fill_options()
-var input = document.querySelector('input'); // get the input element
-input.addEventListener('input', resizeInput); // bind the "resizeInput" callback on "input" event
-resizeInput.call(input); // immediately call the function
-
-from_bar = document.getElementById('from')
-to_bar = document.getElementById('to')
+var input = document.querySelector('input'); 
+input.addEventListener('input', resizeInput); // inputbar die automatisch resized  
+resizeInput.call(input); 
+from_bar.addEventListener('blur', () => AllowShortcutOpt = true); // blur => JS functie dat checkt of er focus verloren is (hier in de inputfield)
+from_bar.addEventListener('focus', () => AllowShortcutOpt = false); // focus => JS functie dat focust op kliks/wijzigingen in de input field van from
 from_bar.addEventListener('input', function(event) {
     var currentValue = event.target.value;
     if ((isNaN(currentValue)) || (currentValue < 1) || (currentValue > 99)){
         from_bar.value = "";
-    }else{
+    }else{ 
         from_bar_val =  Number(from_bar.value);
         if(to_bar_val < from_bar_val){
             to_bar.style.outline = "2px solid red";
@@ -185,6 +199,7 @@ from_bar.addEventListener('input', function(event) {
             opt4.disabled = true;
         }else{
             currentindex = from_bar.value - 1; 
+            hideArrows()
             from_index = currentindex;
             to_bar.style.outline = "none";
             opt1.disabled = false;
@@ -195,7 +210,8 @@ from_bar.addEventListener('input', function(event) {
         }
     }
   });
-
+  to_bar.addEventListener('blur', () => AllowShortcutOpt = true);
+  to_bar.addEventListener('focus', () => AllowShortcutOpt = false);
   to_bar.addEventListener('input', function(event) {
     var currentValue = event.target.value;
     if ((isNaN(currentValue)) || (currentValue < 1) || (currentValue > 99)){
@@ -237,35 +253,28 @@ function switch_names(direction){
         }
         fill_options()
     }
+    hideArrows()
 }
 
 const buttons = document.querySelectorAll('button'); // fancy mousehover effect voor elke optie
 buttons.forEach(button => {
     button.addEventListener('mouseover', () => {
-    button.style.borderColor = 'lightblue';
+    button.style.boxShadow = "rgba(3, 102, 214, 0.3) 0px 0px 0px 3px";
     });
 
     button.addEventListener('mouseout', () => {
-    button.style.borderColor = '';
+    button.style.boxShadow = "";
     });
 });
 addEventListener("keyup", function(event) { // De keyinput handeler (o.a. voor shortcuts)
     if (to_bar_val < from_bar_val){
         return;
     }else if ((event.keyCode === 39)) {
-        currentindex++; 
-        if (currentindex > 98){
-            currentindex = 98;
-            return;}
-        fill_options()
+        switch_names("right")
     }else if(event.keyCode === 37){
-        currentindex--;
-        if (currentindex < 0){
-            currentindex = 0;
-            return;
-        }
-        fill_options()
-    
+        switch_names("left")
+    }else if(AllowShortcutOpt == false){
+        return; 
     }else if(event.keyCode === 49){ // 49 = "1" => shortcut voor optie 1 te kiezen
         for (let i = 1; i < 4; i++) { 
             let check_opt = this.document.getElementById(`opt${i}`); // een flush om ervoor te zorgen dat je niet meerdere keren een antwoord kan kiezen -- performantie-doenbaar => slechts één forloop bij een antwoord
@@ -275,16 +284,7 @@ addEventListener("keyup", function(event) { // De keyinput handeler (o.a. voor s
             }
         Check_answer('opt1')
 
-    }else if(event.keyCode === 50){ // "2" => optie 3 (onder optie 1)
-        for (let i = 1; i < 4; i++) { 
-            let check_opt = this.document.getElementById(`opt${i}`);
-            if (check_opt.style.backgroundColor != ""){
-                return; 
-                }
-            }
-        Check_answer('opt3')
-
-    }else if(event.keyCode === 51){ // "3" => optie 2 (naast optie 1)
+    }else if(event.keyCode === 50){ 
         for (let i = 1; i < 4; i++) { 
             let check_opt = this.document.getElementById(`opt${i}`);
             if (check_opt.style.backgroundColor != ""){
@@ -293,7 +293,16 @@ addEventListener("keyup", function(event) { // De keyinput handeler (o.a. voor s
             }
         Check_answer('opt2')
 
-    }else if(event.keyCode === 52){ // "4" => optie 4 (onder optie 2)
+    }else if(event.keyCode === 51){ 
+        for (let i = 1; i < 4; i++) { 
+            let check_opt = this.document.getElementById(`opt${i}`);
+            if (check_opt.style.backgroundColor != ""){
+                return; 
+                }
+            }
+        Check_answer('opt3')
+
+    }else if(event.keyCode === 52){ 
         for (let i = 1; i < 4; i++) { 
             let check_opt = this.document.getElementById(`opt${i}`);
             if (check_opt.style.backgroundColor != ""){
@@ -330,6 +339,7 @@ function Check_answer(choice) {
                 currentindex++;
                 if (currentindex > to_index){
                     currentindex = from_index;
+                    hideArrows()
                     fill_options() 
                 }
                 always_correct.style.backgroundColor = "";
@@ -340,6 +350,7 @@ function Check_answer(choice) {
                 opt2.disabled = false;
                 opt3.disabled = false;
                 opt4.disabled = false;
+                hideArrows()
                 fill_options()
               }, 900);
 
@@ -351,6 +362,7 @@ function Check_answer(choice) {
         currentindex++;
         if (currentindex > to_index){
             currentindex = from_index;
+            hideArrows()
             fill_options() 
         }
         always_correct.style.backgroundColor = "";
@@ -361,6 +373,7 @@ function Check_answer(choice) {
         opt2.disabled = false;
         opt3.disabled = false;
         opt4.disabled = false;
+        hideArrows()
         fill_options()
       }, 900);
     

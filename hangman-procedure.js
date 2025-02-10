@@ -142,7 +142,9 @@ let to_bar = document.getElementById('to');
 let from_bar_val;
 let to_bar_val;
 let AllowShortcutOpt;
-let quiz_screen = document.getElementById('quiz_screen') 
+let quiz_screen = document.getElementById('quiz_screen');
+let start_screen = document.getElementById('start-screen');
+
 AllowShortcutOpt = true; // sentinel waarde om de optieshortcut te beheren 
 
 hideArrows()
@@ -385,7 +387,7 @@ function MoveTo(where) {
     let quiz_button = document.getElementById("quiz_button");
     if (where == 'Quiz'){
         quiz_screen.style.display = "block";
-        quiz_button.style.display = "none";
+        start_screen.style.display = "none";
     }
 }
 

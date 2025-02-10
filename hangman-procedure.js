@@ -141,8 +141,10 @@ let from_bar = document.getElementById('from');
 let to_bar = document.getElementById('to');
 let from_bar_val;
 let to_bar_val;
-let AllowShortcutOpt; 
+let AllowShortcutOpt;
+let quiz_screen = document.getElementById('quiz_screen') 
 AllowShortcutOpt = true; // sentinel waarde om de optieshortcut te beheren 
+
 hideArrows()
 function hideArrows(){
     if (currentindex == 0){ // bij begin en eind één pijlknop verbergen 
@@ -377,6 +379,14 @@ function Check_answer(choice) {
         fill_options()
       }, 900);
     
+}
+
+function MoveTo(where) {
+    let quiz_button = document.getElementById("quiz_button");
+    if (where == 'Quiz'){
+        quiz_screen.style.display = "block";
+        quiz_button.style.display = "none";
+    }
 }
 
 function fill_options() {

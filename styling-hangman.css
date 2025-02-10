@@ -17,13 +17,9 @@
 .quiz_button_style{
   font-size: 1.5vw;
   font-family: 'Gill Sans';
-  text-align: center;
-  position: center;
+
   height: 5vw;
   width: 15vw;
-  white-space: normal;
-  word-wrap: break-word;
-  overflow: hidden;
   transition: 0.3s;
   cursor: pointer;
   color: white;

@@ -284,16 +284,7 @@ addEventListener("keyup", function(event) { // De keyinput handeler (o.a. voor s
             }
         Check_answer('opt1')
 
-    }else if(event.keyCode === 50){ // "2" => optie 3 (onder optie 1)
-        for (let i = 1; i < 4; i++) { 
-            let check_opt = this.document.getElementById(`opt${i}`);
-            if (check_opt.style.backgroundColor != ""){
-                return; 
-                }
-            }
-        Check_answer('opt3')
-
-    }else if(event.keyCode === 51){ // "3" => optie 2 (naast optie 1)
+    }else if(event.keyCode === 50){ 
         for (let i = 1; i < 4; i++) { 
             let check_opt = this.document.getElementById(`opt${i}`);
             if (check_opt.style.backgroundColor != ""){
@@ -302,7 +293,16 @@ addEventListener("keyup", function(event) { // De keyinput handeler (o.a. voor s
             }
         Check_answer('opt2')
 
-    }else if(event.keyCode === 52){ // "4" => optie 4 (onder optie 2)
+    }else if(event.keyCode === 51){ 
+        for (let i = 1; i < 4; i++) { 
+            let check_opt = this.document.getElementById(`opt${i}`);
+            if (check_opt.style.backgroundColor != ""){
+                return; 
+                }
+            }
+        Check_answer('opt3')
+
+    }else if(event.keyCode === 52){ 
         for (let i = 1; i < 4; i++) { 
             let check_opt = this.document.getElementById(`opt${i}`);
             if (check_opt.style.backgroundColor != ""){

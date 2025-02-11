@@ -183,7 +183,6 @@ function playAudio() {
 horn.onclick = playAudio;
 }
 
-fill_options()
 var input = document.querySelector('input'); 
 input.addEventListener('input', resizeInput); // inputbar die automatisch resized  
 resizeInput.call(input); 
@@ -379,29 +378,44 @@ function Check_answer(choice) {
         opt4.disabled = false;
         hideArrows()
         fill_options()
-      }, 900);
-    
+      }, 900);   
 }
 
 function MoveTo(where) {
     let quiz_button = document.getElementById("quiz_button");
     if (where == 'Quiz'){
         quiz_screen.style.display = "block";
+        fill_options()
         start_screen.style.display = "none";
     }
 }
 
+function move_horn() {
+    let len = list_arabic[currentindex].length 
+    let ref_len = list_arabic[0].length; // Ar-Rahmaan als referentie 
+    diff = ref_len - len; // omdat zowel links als rechts een char opgeschoven wordt  
+    if (diff == 0){
+        horn.style.right = `30%`;
+    }else if (diff > 0){
+        horn.style.right = `${30 + diff}%`
+    }else{
+        horn.style.right = `${30 + diff}%` // -+ = - 
+    }
+}
 function fill_options() {
-    opt1.textContent = ""
-    opt2.textContent = ""
-    opt3.textContent = ""
-    opt4.textContent = ""
+    if (currentindex > 0){
+        move_horn()
+    }
+    opt1.textContent = "";
+    opt2.textContent = "";
+    opt3.textContent = "";
+    opt4.textContent = "";
     let i = currentindex; 
     let j = 0;
     current_symbol.textContent = list_symbols[i];
     current_arabic.textContent = list_arabic[i];
     playAudio()
-    let correct_translation = list_English[i]
+    let correct_translation = list_English[i];
     let correct_pos = Math.floor(Math.random() * 4);
     if (correct_pos == 0){
         opt1.textContent = correct_translation; 

@@ -90,6 +90,11 @@ input{ font-size: normal ; padding:.5em; }
   font-size: 1vw;
 }
 
+.white_space{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 /* Positioning the buttons */
 .option1 { top: 150%; left: 19%; }
 .option2 { top: 150%; left: 52%; }

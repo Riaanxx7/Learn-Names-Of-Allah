@@ -1,4 +1,4 @@
-@media screen and (orientation:portrait) { /* aparte lay-out voor horizontale schermen (laptops, ipads, landscape GSM) */ 
+@media screen and (orientation:landscape) { /* aparte lay-out voor horizontale schermen (laptops, ipads, landscape GSM) */ 
   .centered_Arabic{
     font-size: 6vw;
     font-family: 'Gill Sans';
@@ -12,7 +12,7 @@
     text-align: center;
     position: relative;
     margin-top: 100px; /* Adjust as needed*/
-    top: 500px;
+    top: 50px;
   }
   
    .quiz_button_style{
@@ -127,7 +127,7 @@
 }
 
 
-@media screen and (orientation:landscape) {  /* aparte lay-out voor verticale schermen (voornamelijk bij smartphone)*/ 
+@media screen and (orientation:portrait) {  /* aparte lay-out voor verticale schermen (voornamelijk bij smartphone)*/ 
   .centered_Arabic{
     font-size: 100%;
     font-family: 'Gill Sans';

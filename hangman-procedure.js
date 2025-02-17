@@ -171,7 +171,7 @@ function playAudio() {
     
     horn.onclick = null;
     currentAudio.play()
-    horn.style.color = "Gainsboro";
+    horn.style.color = "#00FF40";
     horn.style.fontSize = "4.4vw";
 
     currentAudio.onended = () => {

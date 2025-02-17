@@ -164,8 +164,8 @@
   }
 
   .quiz_button_style{
-    font-size: 1.5vw;
-    font-family: 'Gill Sans';
+    font-size: 2vw;
+    font-family: 'Serif';
     height: 5vw;
     width: 15vw;
     transition: 0.3s;
@@ -173,8 +173,8 @@
     color: white;
     background-color: black;
     position: absolute;
-    top: 150px;
-    right: 550px;
+    bottom: 20px;
+    right: 100px;
   
   }
   

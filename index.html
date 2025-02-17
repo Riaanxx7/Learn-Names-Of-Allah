@@ -4,6 +4,7 @@
         <!-- Laat de twee volgende lijnen staan -->
             <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
             <meta content="utf-8" http-equiv="encoding">
+            <meta name="viewport" content="width=device-width,height=device-height initial-scale=1">
 
             <link rel="stylesheet" type="text/css" href="styling-hangman.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -34,13 +35,14 @@
 
 
     <div id="start-screen">
-        <div id="main_Arabic"class="centered_Arabic centered_symbols">
+
+        <div id="main_title"class="centered_title">
             Learn Al Asma Ul Husna
+            <center>
+                <br></br>
+                <button onclick="MoveTo('Quiz')" id="quiz_button"class="quiz_button_style">Quiz</button>
+            </center>
         </div>
-        <center>
-        <br></br>
-        <button onclick="MoveTo('Quiz')" id="quiz_button"class="quiz_button_style">Quiz</button>
-        </center>
     </div>
 
     <body>

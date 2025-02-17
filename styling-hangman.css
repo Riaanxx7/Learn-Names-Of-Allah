@@ -1,113 +1,258 @@
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-  width: 100vw;
-  height: 100vh;
-  background-position: center; 
-  background-color: #C0C0C0;
-  background-image: url('islamic_background.png');
-  background-size: cover;
-}
+@media screen and (orientation:portrait) { /* aparte lay-out voor horizontale schermen (laptops, ipads, landscape GSM) */ 
+  .centered_Arabic{
+    font-size: 6vw;
+    font-family: 'Gill Sans';
+    text-align: center;
+    position: relative;
+  }
 
-.centered_Arabic{
-  font-size: 100%;
-  font-family: 'Gill Sans';
-  text-align: center;
-  position: relative;
-  bottom: 70%;
-}
-
-.centered_symbols {
-  font-size: 4vw;
-  font-family: 'Gill Sans';
-  text-align: center;
-  position: relative;
-  margin-top: 100px; /* Adjust as needed*/
-}
-
-.quiz_button_style{
-  font-size: 1.5vw;
-  font-family: 'Gill Sans';
-  height: 5vw;
-  width: 15vw;
-  transition: 0.3s;
-  cursor: pointer;
-  color: white;
-  background-color: black
-
-}
-
-.posaudio{
-position: absolute; 
-top: 60%;
-right: 30%;
-cursor: pointer; 
-font-size: 4vw;
+  .centered_title{
+    font-size: 5vw;
+    font-family: 'Gill Sans';
+    text-align: center;
+    position: relative;
+    margin-top: 100px; /* Adjust as needed*/
+    top: 500px;
+  }
   
-}
-.arrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 1vw;
-  cursor: pointer;
-}
-
-.right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  position: absolute;
-  left: 65%;
-  top: 10%;
-
-}
-
-.left {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-  position: absolute;
-  right: 65%;
-  top: 10%;
-}
-
-.option1, .option2, .option3, .option4 {
-  font-size: 1.5vw;
-  font-family: 'Gill Sans';
-  text-align: center;
-  position: absolute;
-  height: 7vw;
-  width: 30vw;
-  padding: 10px;
-  white-space: normal;
-  word-wrap: break-word;
-  overflow: hidden;
-  transition: 0.3s;
-  cursor: pointer;
+   .quiz_button_style{
+    font-size: 2.4vw;
+    font-family: 'Gill Sans';
+    height: 6vw;
+    width: 17vw;
+    transition: 0.3s;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    position: absolute; 
+    top: 150px;
+    right: 450px;
+  }
   
-}
+  .centered_symbols {
+    font-size: 6vw;
+    font-family: 'Gill Sans';
+    text-align: center;
+    position: relative;
+    margin-top: 100px; /* Adjust as needed*/
+    top: 300px;
+    right: 25px;
+  }
 
-input{ font-size: normal ; padding:.5em; }
-
-.inputstyle{
-  font-size: 1.2vw;
+  html, body{
+    max-width: 100%;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-position: center; 
+    background-color: #C0C0C0;
+    background-image: url('islamic_background.png');
+    background-size: cover;
+  }
+  
+  .posaudio{
   position: absolute; 
-  text-align: center;
-  font-family: 'Gill Sans';
-  top: 400%; 
-  left: 34%; 
+  top: 61%;
+  right: 18%;
+  cursor: pointer; 
+  font-size: 5vw;
+    
+  }
+  .arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 1vw;
+    cursor: pointer;
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    position: absolute;
+    left: 65%;
+    top: 10%;
+  
+  }
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    position: absolute;
+    right: 65%;
+    top: 10%;
+  }
+  
+  .option1, .option2, .option3, .option4 {
+    font-size: 1.9vw;
+    font-family: 'Gill Sans';
+    text-align: center;
+    position: absolute;
+    height: 10vw;
+    width: 30vw;
+    padding: 10px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: hidden;
+    transition: 0.3s;
+    cursor: pointer;
+    
+  }
+  
+  input{ font-size: larger; padding:.6em; }
+  
+  .inputstyle{
+    font-size: 2.5vw;
+    position: absolute; 
+    text-align: center;
+    font-family: 'Gill Sans';
+    top: 400%; 
+    left: 22%; 
+  }
+  
+  .from_to_input{
+    font-size: 1.3vw;
+  }
+  
+  .white_space{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  /* Positioning the buttons */
+  .option1 { top: 150%; left: 10%; }
+  .option2 { top: 150%; left: 55%; }
+  .option3 { top: 250%; left: 10%; }
+  .option4 { top: 250%; left: 55%; }
 }
 
-.from_to_input{
-  font-size: 1vw;
+
+@media screen and (orientation:landscape) {  /* aparte lay-out voor verticale schermen (voornamelijk bij smartphone)*/ 
+  .centered_Arabic{
+    font-size: 100%;
+    font-family: 'Gill Sans';
+    text-align: center;
+    position: relative;
+    bottom: 70%;
+  }
+
+  .centered_title{
+    font-size: 5vw;
+    font-family: 'Gill Sans';
+    text-align: center;
+    position: relative;
+    margin-top: 100px; /* Adjust as needed*/
+  }
+  
+  .centered_symbols {
+    font-size: 4vw;
+    font-family: 'Gill Sans';
+    text-align: center;
+    position: relative;
+    margin-top: 100px; /* Adjust as needed*/
+  }
+
+  html, body{
+    max-width: 100%;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-position: center; 
+    background-color: #C0C0C0;
+    background-image: url('islamic_background.png');
+    background-size: cover;
+  }
+
+  .quiz_button_style{
+    font-size: 1.5vw;
+    font-family: 'Gill Sans';
+    height: 5vw;
+    width: 15vw;
+    transition: 0.3s;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    position: absolute;
+    top: 150px;
+    right: 550px;
+  
+  }
+  
+  .posaudio{
+  position: absolute; 
+  top: 60%;
+  right: 30%;
+  cursor: pointer; 
+  font-size: 4vw;
+    
+  }
+  .arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 1vw;
+    cursor: pointer;
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    position: absolute;
+    left: 65%;
+    top: 10%;
+  
+  }
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    position: absolute;
+    right: 65%;
+    top: 10%;
+  }
+  
+  .option1, .option2, .option3, .option4 {
+    font-size: 1.5vw;
+    font-family: 'Gill Sans';
+    text-align: center;
+    position: absolute;
+    height: 7vw;
+    width: 30vw;
+    padding: 10px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: hidden;
+    transition: 0.3s;
+    cursor: pointer;
+    
+  }
+  
+  input{ font-size: normal ; padding:.5em; }
+  
+  .inputstyle{
+    font-size: 1.2vw;
+    position: absolute; 
+    text-align: center;
+    font-family: 'Gill Sans';
+    top: 400%; 
+    left: 34%; 
+  }
+  
+  .from_to_input{
+    font-size: 1vw;
+  }
+  
+  .white_space{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  /* Positioning the buttons */
+  .option1 { top: 150%; left: 19%; }
+  .option2 { top: 150%; left: 52%; }
+  .option3 { top: 250%; left: 19%; }
+  .option4 { top: 250%; left: 52%; }
+
 }
 
-.white_space{
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
 
-/* Positioning the buttons */
-.option1 { top: 150%; left: 19%; }
-.option2 { top: 150%; left: 52%; }
-.option3 { top: 250%; left: 19%; }
-.option4 { top: 250%; left: 52%; }

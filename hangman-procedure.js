@@ -144,6 +144,7 @@ let to_bar_val;
 let AllowShortcutOpt;
 let quiz_screen = document.getElementById('quiz_screen');
 let start_screen = document.getElementById('start-screen');
+let quiz_button = document.getElementById("quiz_button");
 
 AllowShortcutOpt = true; // sentinel waarde om de optieshortcut te beheren 
 

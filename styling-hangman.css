@@ -1,43 +1,228 @@
 @media screen and (orientation:landscape) { /* aparte lay-out voor horizontale schermen (laptops, ipads, landscape GSM) */ 
   .centered_Arabic{
-    font-size: 6vw;
-    font-family: 'Gill Sans';
-    text-align: center;
-    position: relative;
-  }
 
-  .centered_title{
-    font-size: 5vw;
+    font-size: 100%;
+  
     font-family: 'Gill Sans';
+  
     text-align: center;
+  
     position: relative;
-    margin-top: 100px; /* Adjust as needed*/
-    top: 50px;
+  
+    bottom: 70%;
+  
   }
   
-   .quiz_button_style{
-    font-size: 2.4vw;
-    font-family: 'Gill Sans';
-    height: 6vw;
-    width: 17vw;
-    transition: 0.3s;
-    cursor: pointer;
-    color: white;
-    background-color: black;
-    position: absolute; 
-    top: 150px;
-    right: 450px;
-  }
+  
   
   .centered_symbols {
-    font-size: 6vw;
+  
+    font-size: 4vw;
+  
     font-family: 'Gill Sans';
+  
     text-align: center;
+  
     position: relative;
+  
     margin-top: 100px; /* Adjust as needed*/
-    top: 300px;
-    right: 25px;
+  
   }
+  
+  
+  
+  .quiz_button_style{
+    vertical-align: center;
+    text-align: center;
+    font-size: 4vw;
+    font-family: 'Rahmuna';
+  
+    height: 5.3vw;
+  
+    width: 17vw;
+  
+    transition: 0.3s;
+    position: absolute; 
+    top: 150px;
+    left: 550px;
+  
+    cursor: pointer;
+  
+    color: white;
+  
+    background-color: black
+  
+  
+  
+  }
+
+  @font-face {
+    font-family: 'Rahmuna';
+    src: url("rahmuna.regular.otf") format("opentype");
+}
+
+  .centered_title{
+
+    font-size: 6vw;
+
+    font-family: 'Rahmuna';
+
+
+    text-align: center;
+
+
+    position: relative;
+
+
+    margin-top: 100px; /* Adjust as needed*/
+
+
+  }
+  
+  
+  
+  .posaudio{
+  
+  position: absolute; 
+  
+  top: 60%;
+  
+  right: 30%;
+  
+  cursor: pointer; 
+  
+  font-size: 4vw;
+  
+  
+  
+  }
+  
+  .arrow {
+  
+    border: solid black;
+  
+    border-width: 0 3px 3px 0;
+  
+    display: inline-block;
+  
+    padding: 1vw;
+  
+    cursor: pointer;
+  
+  }
+  
+  
+  
+  .right {
+  
+    transform: rotate(-45deg);
+  
+    -webkit-transform: rotate(-45deg);
+  
+    position: absolute;
+  
+    left: 65%;
+  
+    top: 10%;
+  
+  
+  
+  }
+  
+  
+  
+  .left {
+  
+    transform: rotate(135deg);
+  
+    -webkit-transform: rotate(135deg);
+  
+    position: absolute;
+  
+    right: 65%;
+  
+    top: 10%;
+  
+  }
+  
+  
+  
+  .option1, .option2, .option3, .option4 {
+  
+    font-size: 1.5vw;
+  
+    font-family: 'Gill Sans';
+  
+    text-align: center;
+  
+    position: absolute;
+  
+    height: 7vw;
+  
+    width: 30vw;
+  
+    padding: 10px;
+  
+    white-space: normal;
+  
+    word-wrap: break-word;
+  
+    overflow: hidden;
+  
+    transition: 0.3s;
+  
+    cursor: pointer;
+  
+  
+  
+  }
+  
+  
+  
+  input{ font-size: normal ; padding:.5em; }
+  
+  
+  
+  .inputstyle{
+  
+    font-size: 1.2vw;
+  
+    position: absolute; 
+  
+    text-align: center;
+  
+    font-family: 'Gill Sans';
+  
+    top: 400%; 
+  
+    left: 34%; 
+  
+  }
+  
+  
+  
+  .from_to_input{
+  
+    font-size: 1vw;
+  
+  }
+  
+  
+  
+  .white_space{
+  
+    margin-top: 30px;
+    margin-bottom: 30px;
+  
+  }  
+  
+  /* Positioning the buttons */
+  
+  .option1 { top: 150%; left: 19%; }
+  .option2 { top: 150%; left: 52%; }
+  .option3 { top: 250%; left: 19%; }
+  .option4 { top: 250%; left: 52%; }
+
 
   html, body{
     max-width: 100%;
@@ -49,81 +234,7 @@
     background-image: url('islamic_background.png');
     background-size: cover;
   }
-  
-  .posaudio{
-  position: absolute; 
-  top: 61%;
-  right: 18%;
-  cursor: pointer; 
-  font-size: 5vw;
-    
-  }
-  .arrow {
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 1vw;
-    cursor: pointer;
-  }
-  
-  .right {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    position: absolute;
-    left: 65%;
-    top: 10%;
-  
-  }
-  
-  .left {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    position: absolute;
-    right: 65%;
-    top: 10%;
-  }
-  
-  .option1, .option2, .option3, .option4 {
-    font-size: 1.9vw;
-    font-family: 'Gill Sans';
-    text-align: center;
-    position: absolute;
-    height: 10vw;
-    width: 30vw;
-    padding: 10px;
-    white-space: normal;
-    word-wrap: break-word;
-    overflow: hidden;
-    transition: 0.3s;
-    cursor: pointer;
-    
-  }
-  
-  input{ font-size: larger; padding:.6em; }
-  
-  .inputstyle{
-    font-size: 2.5vw;
-    position: absolute; 
-    text-align: center;
-    font-family: 'Gill Sans';
-    top: 400%; 
-    left: 22%; 
-  }
-  
-  .from_to_input{
-    font-size: 1.3vw;
-  }
-  
-  .white_space{
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-  
-  /* Positioning the buttons */
-  .option1 { top: 150%; left: 10%; }
-  .option2 { top: 150%; left: 55%; }
-  .option3 { top: 250%; left: 10%; }
-  .option4 { top: 250%; left: 55%; }
+
 }
 
 

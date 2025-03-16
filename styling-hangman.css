@@ -1,369 +1,183 @@
-@media screen and (orientation:landscape) { /* aparte lay-out voor horizontale schermen (laptops, ipads, landscape GSM) */ 
-  .centered_Arabic{
-
-    font-size: 100%;
-  
-    font-family: 'Gill Sans';
-  
-    text-align: center;
-  
-    position: relative;
-  
-    bottom: 70%;
-  
-  }
-  
-  
-  
-  .centered_symbols {
-  
-    font-size: 4vw;
-  
-    font-family: 'Gill Sans';
-  
-    text-align: center;
-  
-    position: relative;
-  
-    margin-top: 100px; /* Adjust as needed*/
-  
-  }
-  
-  
-  
-  .quiz_button_style{
-    vertical-align: center;
-    text-align: center;
-    font-size: 4vw;
-    font-family: 'Rahmuna';
-  
-    height: 5.3vw;
-  
-    width: 17vw;
-  
-    transition: 0.3s;
-    position: absolute; 
-    top: 150px;
-    left: 550px;
-  
-    cursor: pointer;
-  
-    color: white;
-  
-    background-color: black
-  
-  
-  
-  }
-
-  @font-face {
-    font-family: 'Rahmuna';
-    src: url("rahmuna.regular.otf") format("opentype");
+.centered_Arabic {
+  font-size: 100%;
+  font-family: 'Gill Sans';
+  text-align: center;
+  position: relative;
+  bottom: 0%;
 }
-
-  .centered_title{
-
-    font-size: 6vw;
-
-    font-family: 'Rahmuna';
-
-
-    text-align: center;
-
-
-    position: relative;
-
-
-    margin-top: 100px; /* Adjust as needed*/
-
-
-  }
-  
-  
-  
-  .posaudio{
-  
-  position: absolute; 
-  
-  top: 60%;
-  
-  right: 30%;
-  
-  cursor: pointer; 
-  
+.centered_symbols {
   font-size: 4vw;
-  
-  
-  
-  }
-  
-  .arrow {
-  
-    border: solid black;
-  
-    border-width: 0 3px 3px 0;
-  
-    display: inline-block;
-  
-    padding: 1vw;
-  
-    cursor: pointer;
-  
-  }
-  
-  
-  
-  .right {
-  
-    transform: rotate(-45deg);
-  
-    -webkit-transform: rotate(-45deg);
-  
-    position: absolute;
-  
-    left: 65%;
-  
-    top: 10%;
-  
-  
-  
-  }
-  
-  
-  
-  .left {
-  
-    transform: rotate(135deg);
-  
-    -webkit-transform: rotate(135deg);
-  
-    position: absolute;
-  
-    right: 65%;
-  
-    top: 10%;
-  
-  }
-  
-  
-  
-  .option1, .option2, .option3, .option4 {
-  
-    font-size: 1.5vw;
-  
-    font-family: 'Gill Sans';
-  
-    text-align: center;
-  
-    position: absolute;
-  
-    height: 7vw;
-  
-    width: 30vw;
-  
-    padding: 10px;
-  
-    white-space: normal;
-  
-    word-wrap: break-word;
-  
-    overflow: hidden;
-  
-    transition: 0.3s;
-  
-    cursor: pointer;
-  
-  
-  
-  }
-  
-  
-  
-  input{ font-size: normal ; padding:.5em; }
-  
-  
-  
-  .inputstyle{
-  
-    font-size: 1.2vw;
-  
-    position: absolute; 
-  
-    text-align: center;
-  
-    font-family: 'Gill Sans';
-  
-    top: 400%; 
-  
-    left: 34%; 
-  
-  }
-  
-  
-  
-  .from_to_input{
-  
-    font-size: 1vw;
-  
-  }
-  
-  
-  
-  .white_space{
-  
-    margin-top: 30px;
-    margin-bottom: 30px;
-  
-  }  
-  
-  /* Positioning the buttons */
-  
-  .option1 { top: 150%; left: 19%; }
-  .option2 { top: 150%; left: 52%; }
-  .option3 { top: 250%; left: 19%; }
-  .option4 { top: 250%; left: 52%; }
-
-
-  html, body{
-    max-width: 100%;
-    overflow-x: hidden;
-    width: 100vw;
-    height: 100vh;
-    background-position: center; 
-    background-color: #C0C0C0;
-    background-image: url('islamic_background.png');
-    background-size: cover;
-  }
-
+  font-family: 'Gill Sans';
+  text-align: center;
+  position: relative;
+  margin-top: 120px; /* Adjust as needed*/
 }
-
-
-@media screen and (orientation:portrait) {  /* aparte lay-out voor verticale schermen (voornamelijk bij smartphone)*/ 
-  .centered_Arabic{
-    font-size: 100%;
-    font-family: 'Gill Sans';
-    text-align: center;
-    position: relative;
-    bottom: 70%;
-  }
-
-  .centered_title{
-    font-size: 5vw;
-    font-family: 'Gill Sans';
-    text-align: center;
-    position: relative;
-    margin-top: 100px; /* Adjust as needed*/
-  }
+.quiz_button_style {
+  vertical-align: center;
+  text-align: center;
+  font-size: 4vw;
+  font-family: 'Rahmuna';
+  padding: 7px;
+  border-radius: 15px;
+  height: 5.8vw;
+  width: 17vw;
+  transition: 0.3s;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  cursor: pointer;
+  color: white;
+  background-color: black
   
-  .centered_symbols {
-    font-size: 4vw;
-    font-family: 'Gill Sans';
-    text-align: center;
-    position: relative;
-    margin-top: 100px; /* Adjust as needed*/
-  }
-
-  html, body{
-    max-width: 100%;
-    overflow-x: hidden;
-    width: 100vw;
-    height: 100vh;
-    background-position: center; 
-    background-color: #C0C0C0;
-    background-image: url('islamic_background.png');
-    background-size: cover;
-  }
-
-  .quiz_button_style{
-    font-size: 2vw;
-    font-family: 'Serif';
-    height: 5vw;
-    width: 15vw;
-    transition: 0.3s;
-    cursor: pointer;
-    color: white;
-    background-color: black;
-    position: absolute;
-    bottom: 20px;
-    right: 100px;
   
-  }
   
-  .posaudio{
-  position: absolute; 
+  
+}
+@font-face {
+  font-family: 'Rahmuna';
+  src: url("rahmuna.regular.otf") format("opentype");
+}
+.centered_title {
+  font-size: 6vw;
+  font-family: 'Rahmuna';
+  text-align: center;
+  position: relative;
+  margin-top: 100px; /* Adjust as needed*/
+}
+.posaudio {
+  position: absolute;
   top: 60%;
   right: 30%;
-  cursor: pointer; 
+  cursor: pointer;
   font-size: 4vw;
-    
-  }
-  .arrow {
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 1vw;
-    cursor: pointer;
-  }
-  
-  .right {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    position: absolute;
-    left: 65%;
-    top: 10%;
-  
-  }
-  
-  .left {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-    position: absolute;
-    right: 65%;
-    top: 10%;
-  }
-  
-  .option1, .option2, .option3, .option4 {
-    font-size: 1.5vw;
-    font-family: 'Gill Sans';
-    text-align: center;
-    position: absolute;
-    height: 7vw;
-    width: 30vw;
-    padding: 10px;
-    white-space: normal;
-    word-wrap: break-word;
-    overflow: hidden;
-    transition: 0.3s;
-    cursor: pointer;
-    
-  }
-  
-  input{ font-size: normal ; padding:.5em; }
-  
-  .inputstyle{
-    font-size: 1.2vw;
-    position: absolute; 
-    text-align: center;
-    font-family: 'Gill Sans';
-    top: 400%; 
-    left: 34%; 
-  }
-  
-  .from_to_input{
-    font-size: 1vw;
-  }
-  
-  .white_space{
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
+}
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 1vw;
+  cursor: pointer;
+}
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  position: absolute;
+  left: 65%;
+  top: 10%;
+}
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  position: absolute;
+  right: 65%;
+  top: 10%;
+}
+.option1,
+.option2,
+.option3,
+.option4 {
+  font-size: 1.5vw;
+  font-family: 'Gill Sans';
+  text-align: center;
+  position: absolute;
+  height: 7vw;
+  width: 30vw;
+  padding: 10px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: hidden;
+  transition: 0.3s;
+  cursor: pointer;
+}
+input {
+  font-size: normal ;
+  padding:.5em;
+}
+.inputstyle {
+  font-size: 1.2vw;
+  position: absolute;
+  text-align: center;
+  font-family: 'Gill Sans';
+  top: 400%;
+  left: 34%;
+}
+.from_to_input {
+  font-size: 1vw;
+}
+.white_space {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}  
   
   /* Positioning the buttons */
-  .option1 { top: 150%; left: 19%; }
-  .option2 { top: 150%; left: 52%; }
-  .option3 { top: 250%; left: 19%; }
-  .option4 { top: 250%; left: 52%; }
-
+.option1 {
+  top: 150%;
+  left: 19%;
 }
-
-
+.option2 {
+  top: 150%;
+  left: 52%;
+}
+.option3 {
+  top: 250%;
+  left: 19%;
+}
+.option4 {
+  top: 250%;
+  left: 52%;
+}
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-color: #C0C0C0;
+  background-image: url('islamic_background.png');
+  background-size: cover;
+}
+@media only screen and (max-width: 500px) {
+  .centered_title {
+    font-size: 2.8rem;
+    line-height: 13vw;
+  }
+  .posaudio {
+    font-size: 10vw;
+    top: 70%;
+    right: 16%;
+ }
+  .quiz_button_style {
+    font-size: 2rem;
+    height: 11.8vw;
+    width: 20vw;
+    margin-top: 40px;
+  }
+  .option4 {
+    font-size: 2.7vw;
+    height: 10vw;
+    width: 30vw;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .option3 {
+    font-size: 2.7vw;
+    height: 10vw;
+    width: 30vw;
+    margin-top: 10px;
+  }
+  .option2 {
+    font-size: 2.7vw;
+    height: 10vw;
+    width: 30vw;
+    margin-top: -10px;
+    margin-left: 10px;
+  }
+  .option1 {
+    font-size: 2.7vw;
+    height: 10vw;
+    width: 30vw;
+    margin-top: -10px;
+  }
+ 
+}

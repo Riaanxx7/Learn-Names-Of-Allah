@@ -17,7 +17,7 @@
   text-align: center;
   font-size: 4vw;
   font-family: 'Rahmuna';
-  padding: 7px;
+  padding: .5vw;
   border-radius: 15px;
   height: 5.8vw;
   width: 17vw;
@@ -27,10 +27,8 @@
   left: 40%;
   cursor: pointer;
   color: white;
-  background-color: black
-  
-  
-  
+  background-color: black;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;  
   
 }
 @font-face {
@@ -40,7 +38,7 @@
 .centered_title {
   font-size: 6vw;
   font-family: 'Rahmuna';
-  text-align: center;
+  text-shadow: 2px 3px 5px rgba(0,0,0,0.7);  text-align: center;
   position: relative;
   margin-top: 100px; /* Adjust as needed*/
 }
@@ -138,33 +136,56 @@ body {
   background-size: cover;
 }
 @media only screen and (max-width: 500px) {
+  
+  
+  .inputstyle{
+    font-size: 3vw;
+    right: 24vw;
+    margin-top: 4px;
+  }
+  
+  .centered_symbols{
+    font-size: 5vw;
+    margin-right: 26px;
+    margin-left: 0px;
+
+
+  }
   .centered_title {
     font-size: 2.8rem;
-    line-height: 13vw;
+    line-height: 15vw;
+    right: 2vw;
+    top: 7vw;
   }
   .posaudio {
     font-size: 10vw;
     top: 70%;
     right: 16%;
  }
+  
+  .quiz_container{
+      transform: scale(1.4);
+  }
   .quiz_button_style {
-    font-size: 2rem;
-    height: 11.8vw;
-    width: 20vw;
+    font-size: 1.8rem;
+    height: 13vw;
+    width: 24vw;
+    margin-left: -6px;
     margin-top: 40px;
+    padding: 0.99vw;
   }
   .option4 {
     font-size: 2.7vw;
     height: 10vw;
     width: 30vw;
-    margin-top: 10px;
+    margin-top: 4px;
     margin-left: 10px;
   }
   .option3 {
     font-size: 2.7vw;
     height: 10vw;
     width: 30vw;
-    margin-top: 10px;
+    margin-top: 4px;
   }
   .option2 {
     font-size: 2.7vw;

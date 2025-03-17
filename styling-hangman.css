@@ -1,3 +1,20 @@
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.Title{
+  animation-name: slideInLeft;
+  animation-timing-function: ease-out;
+  animation-duration: 1.5s;
+}
+
 .centered_Arabic {
   font-size: 100%;
   font-family: 'Gill Sans';
@@ -21,16 +38,19 @@
   border-radius: 15px;
   height: 5.8vw;
   width: 17vw;
-  transition: 0.3s;
+  transition: 0.1s;
   position: absolute;
   top: 40%;
   left: 40%;
   cursor: pointer;
   color: white;
   background-color: black;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;  
-  
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; 
+  animation-name: slideInLeft;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;  
 }
+
 @font-face {
   font-family: 'Rahmuna';
   src: url("rahmuna.regular.otf") format("opentype");
@@ -86,6 +106,9 @@
   overflow: hidden;
   transition: 0.3s;
   cursor: pointer;
+  border-radius: 15px;
+
+
 }
 input {
   font-size: normal ;
@@ -202,3 +225,4 @@ body {
   }
  
 }
+

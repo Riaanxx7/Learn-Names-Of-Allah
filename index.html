@@ -11,7 +11,7 @@
         </head>
 <body>
     <div id="quiz_screen" style="display: none" class="quiz_container">
-        <div class="centered_symbols">
+        <div id="centered_symbols" class="centered_symbols">
             <i onclick="switch_names('right')"id="RightArrow" class="arrow right"></i></p>
             <i onclick="switch_names('left')"id="LeftArrow" class="arrow left"></i></p>
             <header id="main_symbol">ٱلرَّحْمَٰنُ</header>
@@ -31,16 +31,18 @@
             </form>
         </div>
     </div>
-
-
-
+    
+    <div style="display: none" id="name_title" class="centered_title Title">names</div>
+    <div id="table-container" class="hidden"></div>
+    
     <div id="start-screen">
-
+        <body onload="AnimateStartScreen()"> 
         <div id="main_title"class="centered_title">
             <div class="Title">Learn Al Asma Ul Husna</div>
             <center>
                 <br></br>
-                <button onclick="MoveTo('Quiz')" id="quiz_button"class="quiz_button_style">Quiz</button>
+                <button onclick="MoveTo('Quiz')" id="quiz_button"class="quiz_button_style hidden">Quiz</button>
+                <button onclick="MoveTo('Names')" id="names_button"class="names_button_style hidden">Names</button>
             </center>
         </div>
     </div>

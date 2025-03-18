@@ -144,7 +144,12 @@ let to_bar_val;
 let AllowShortcutOpt;
 let quiz_screen = document.getElementById('quiz_screen');
 let start_screen = document.getElementById('start-screen');
+let names_screen = document.getElementById('names-screen');
 let quiz_button = document.getElementById("quiz_button");
+let names_button = document.getElementById("names_button");
+let centered_symbols = document.getElementById('centered_symbols')
+let name_title = document.getElementById("name_title");
+let table_container = document.getElementById('table-container')
 
 AllowShortcutOpt = true; // sentinel waarde om de optieshortcut te beheren 
 
@@ -383,6 +388,51 @@ function Check_answer(choice) {
       }, 900);   
 }
 
+
+function generateTable() {
+    const container = document.getElementById('table-container');
+    container.innerHTML = ''; // Clear any existing content
+
+    const table = document.createElement('table');
+    table.className = 'container'; // Apply the same styling as your existing table
+
+    // Create the header row
+    const headerRow = document.createElement('tr');
+    const headers = ['Arabic', 'Transliteration', 'English'];
+    headers.forEach(headerText => {
+        const th = document.createElement('th');
+        th.textContent = headerText;
+        headerRow.appendChild(th);
+    });
+    table.appendChild(headerRow);
+
+    // Create the data rows
+    for (let i = 0; i < list_symbols.length; i++) {
+        const row = document.createElement('tr');
+
+        // Arabic Name
+        const arabicCell = document.createElement('td');
+        const arabicSpan = document.createElement('span');
+        arabicSpan.textContent = list_symbols[i];
+        arabicCell.appendChild(arabicSpan);
+        row.appendChild(arabicCell);
+
+        // Transliteration
+        const transliterationCell = document.createElement('td');
+        transliterationCell.textContent = list_arabic[i].split('. ')[1];
+        row.appendChild(transliterationCell);
+
+        // English Translation
+        const englishCell = document.createElement('td');
+        englishCell.textContent = list_English[i];
+        row.appendChild(englishCell);
+
+        table.appendChild(row);
+    }
+
+    container.appendChild(table);
+}
+
 function MoveTo(where) {
     let quiz_button = document.getElementById("quiz_button");
     if (where == 'Quiz'){
@@ -390,8 +440,21 @@ function MoveTo(where) {
         fill_options()
         start_screen.style.display = "none";
     }
+    if (where == 'Names'){
+        start_screen.style.display = "none";
+        name_title.style.display = "block"
+        generateTable();
+        AnimateTable();
+    }
 }
 
+
+function AnimateTable() {
+    setTimeout(() => {
+        table_container.classList.remove('hidden');
+        table_container.classList.add('show');
+    }, 300);
+}
 function move_horn() {
     let len = list_arabic[currentindex].length 
     let ref_len = list_arabic[0].length; // Ar-Rahmaan als referentie 
@@ -404,7 +467,19 @@ function move_horn() {
         horn.style.right = `${30 + diff}%` // -+ = - 
     }
 }
+
+function AnimateStartScreen(){
+    setTimeout(() => {
+        quiz_button.classList.remove('hidden');
+        quiz_button.classList.add('show');
+    }, 300);
+    setTimeout(() => {
+        names_button.classList.remove('hidden');
+        names_button.classList.add('show');
+    }, 600);
+}
 function fill_options() {
+    
     if (currentindex > 0){
         move_horn()
     }

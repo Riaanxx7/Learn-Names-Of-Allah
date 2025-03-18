@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
 @keyframes slideInLeft {
   from {
     transform: translateX(-10px);
@@ -46,9 +48,64 @@
   color: white;
   background-color: black;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; 
+}
+
+.hidden{
+  opacity: 0;
+  visibility: hidden;
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
   animation-name: slideInLeft;
   animation-timing-function: ease-in-out;
-  animation-duration: 2s;  
+  animation-duration: 1.5s;
+}
+
+.quiz_button_style.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.names_button_style{
+  vertical-align: center;
+  text-align: center;
+  font-size: 4vw;
+  font-family: 'Rahmuna';
+  padding: .5vw;
+  border-radius: 15px;
+  height: 5.8vw;
+  width: 17vw;
+  transition: 0.1s;
+  position: absolute;
+  top: 70%;
+  left: 40%;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; 
+
+}
+.names_button_style.hidden{
+  opacity: 0;
+  visibility: hidden;
+}
+
+.names_button_style.show {
+  opacity: 1;
+  visibility: visible;
+  animation-name: slideInLeft;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1.5s;
+}
+
+.quiz_button_style.show {
+  opacity: 1;
+  visibility: visible;
+  animation-name: slideInLeft;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1.5s;
 }
 
 @font-face {
@@ -189,6 +246,17 @@ body {
   .quiz_container{
       transform: scale(1.4);
   }
+
+  .names_button_style{
+    font-size: 1.8rem;
+    height: 13vw;
+    width: 24vw;
+    margin-left: -6px;
+    margin-top: 40px;
+    padding: 0.99vw;
+  }
+
+
   .quiz_button_style {
     font-size: 1.8rem;
     height: 13vw;
@@ -224,5 +292,93 @@ body {
     margin-top: -10px;
   }
  
+}
+
+h1 {
+  font-size:3em; 
+  font-weight: 300;
+  line-height:1em;
+  text-align: center;
+  color: #4DC3FA;
+}
+
+
+.blue { color: #185875; }
+.yellow { color: #FFF842; }
+
+.container th h1 {
+	  font-weight: bold;
+	  font-size: 1em;
+  text-align: left;
+  color: #185875;
+}
+
+.container td {
+	  font-weight: normal;
+	  font-size: 1em;
+  -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+	   -moz-box-shadow: 0 2px 2px -2px #0E1119;
+	        box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.container {
+	  text-align: left;
+	  overflow: hidden;
+	  width: 80%;
+	  margin: 0 auto;
+  display: table;
+  padding: 0 0 8em 0;
+}
+
+.container td, .container th {
+	  padding-bottom: 2%;
+	  padding-top: 2%;
+  padding-left:2%;  
+}
+
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+	  background-color: white;
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+	  background-color: white;
+}
+
+.container th {
+	  background-color: #1F2739;
+  color: white;
+}
+
+.container td:first-child {
+	  color: gold;
+}
+
+.container tr:hover {
+   background-color: white;
+-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+	   -moz-box-shadow: 0 6px 6px -6px #0E1119;
+	        box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.container td:hover {
+  color: #403E10;
+  font-weight: bold;
+  
+  box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+  transform: translate3d(3px, -3px, 0);
+  
+  transition-delay: 0s;
+	  transition-duration: 0.4s;
+	  transition-property: all;
+  transition-timing-function: line;
+}
+
+@media (max-width: 800px) {
+	.container td:nth-child(4),
+.container th:nth-child(4) {
+		  display: none;
+	  }
 }
 
